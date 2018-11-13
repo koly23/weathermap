@@ -1,0 +1,37 @@
+APPLICATION_ID: weathermap
+service_description:
+  name: fusionweather
+  version: 0.0.1
+  properties:
+    allowCrossApp: false
+cse:
+  service:
+    registry:
+      address: https://cse.cn-north-1.myhuaweicloud.com:443
+      instance:
+        watch: false
+  config:
+    client:
+      serverUri: https://cse.cn-north-1.myhuaweicloud.com:443
+      refreshMode: 1
+      refresh_interval: 5000
+  monitor:
+    client:
+      serverUri: https://cse.cn-north-1.myhuaweicloud.com:443
+  rest:
+    address: 0.0.0.0:13092
+#  credentials:
+#    accessKey: yourak
+#    secretKey: yoursk
+#    akskCustomCipher: default
+#    project: cn-north-1
+#addressResolver:   ## windows下，域名无法解析，可配置addressResolver
+#  servers: 8.8.8.8
+
+# avoid conflict with black list
+servicecomb:
+  service:
+    registry:
+      instance:
+        empty:
+          protection: false
